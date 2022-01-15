@@ -80,17 +80,12 @@ while True:
         ############################## left arm ##############################
         if hand == 0:
             angle, difference = detector.findAngle(img, 12, 11, 13)
-
-            # Extract minimum and maximum values from text file Read text file
-            f = open(r"../Horizontale  Abduktion Adduktion/angle_file.txt", "r")
-            minimum = min(f)  # Minimum value
+           
             value_min = 140
-            f.close()
-
-            f = open(r"../Horizontale  Abduktion Adduktion/angle_file.txt", "r")
-            maximum = max(f)  # Maximum value
+           
+           
             value_max = 70
-            f.close()
+           
 
             # bar for left arm
             per1 = np.interp(angle, (value_max, value_min), (100, 0))
